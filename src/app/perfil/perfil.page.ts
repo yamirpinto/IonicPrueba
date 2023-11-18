@@ -16,10 +16,6 @@ export class PerfilPage implements OnInit {
 
   ngOnInit() {
     this.usuarioLogueado = this.auth.getUsuarioLogeado();
-
-    // this.auth.$usuarioActivo.subscribe((usuario: UsuarioLogeado | null) => {
-    //   this.usuarioLogueado = usuario;
-    // });
   }
   irAPaginaProductos() {
     this.router.navigate(['/productos']);
