@@ -1,4 +1,4 @@
-export interface LoggedUserModel {
+export interface UsuarioLogeado {
     id: number;
     username: string;
     email: string;

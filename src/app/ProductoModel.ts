@@ -1,4 +1,11 @@
-export interface ProuctoModel {
+export interface ProductoModel {
+    products: Producto[];
+    total: number;
+    skip: number;
+    limit: number;
+  }
+
+  export interface Producto {
     id: number;
     title: string;
     description: string;
@@ -9,8 +16,5 @@ export interface ProuctoModel {
     brand: string;
     category: string;
     thumbnail: string;
-    images: [string];
-    total: number;
-    skip: number;
-    limit: number;
+    images: string[];
   }

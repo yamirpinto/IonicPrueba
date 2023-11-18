@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../servicio/auth.service';
+import { UsuarioLogeado } from '../UsuarioLogeado';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPage implements OnInit {
 
-  constructor() { }
+  public usuarioLogueado: UsuarioLogeado | null = null;
+
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
-  }
+    this.usuarioLogueado = this.auth.getUsuarioLogeado();
 
+    // this.auth.$usuarioActivo.subscribe((usuario: UsuarioLogeado | null) => {
+    //   this.usuarioLogueado = usuario;
+    // });
+  }
+  irAPaginaProductos() {
+    this.router.navigate(['/productos']);
+  }
 }

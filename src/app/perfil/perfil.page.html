@@ -1,13 +1,23 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>perfil</ion-title>
+    <ion-title>
+      Perfil de usuario
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">perfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <ion-img [src]="usuarioLogueado?.image"></ion-img>
+    <ion-card-content>
+      <ion-card-title>{{ usuarioLogueado?.firstName }} {{ usuarioLogueado?.lastName }}</ion-card-title>
+      <p>Username: {{ usuarioLogueado?.username }}</p>
+      <p>Email: {{ usuarioLogueado?.email }}</p>
+      <p>Gender: {{ usuarioLogueado?.gender }}</p>
+      <!-- Otros detalles según tus necesidades -->
+    </ion-card-content>
+    </ion-card>
+  <ion-button expand="full" (click)="irAPaginaProductos()">
+    Ir a Productos
+  </ion-button>
 </ion-content>

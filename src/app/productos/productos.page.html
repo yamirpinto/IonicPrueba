@@ -1,13 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>productos</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">productos</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list *ngIf="productos">
+    <ion-item *ngFor="let producto of productos.products">
+      <ion-img [src]="producto.thumbnail"></ion-img>
+      <ion-label>{{ producto.title }}</ion-label>
+      <ion-label>{{ producto.price | currency }}</ion-label>
+      <ion-label>{{ producto.discountPercentage }}% de descuento</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="retrocederPagina()" expand="full" [disabled]="skip === 0">Anterior</ion-button>
+  <ion-button (click)="avanzarPagina()" expand="full">Siguiente</ion-button>
 </ion-content>
