@@ -23,5 +23,4 @@
     <ion-progress-bar *ngIf="auth.$cargando | async"  type="indeterminate"></ion-progress-bar>
     <ion-button type="submit" expand="block">Entrar</ion-button>
   </form>
-  {{ auth.$activeUser | async | json }}
 </ion-content>
